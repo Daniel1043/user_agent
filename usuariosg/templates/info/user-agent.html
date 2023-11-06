@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Daniel </title>
+        <meta charset="UTF-8" />
+       
+       
+    </head>
+
+<body>
+    <p>Daniel Lorenzo Casas</p>
+    
+    {% load user_agents %}
+
+{% if request|is_mobile %}
+Esta entrando desde un movil
+
+{% endif %}
+
+{% if request|is_tablet %}
+Esta entrando desde una Tablet
+{% endif %}
+
+{% if request|is_pc %}
+ Esta entrando desde un PC
+{% endif %}
+
+<br> <br>
+{% if request|is_touch_capable %}
+Su dispositivo es tactil
+{% else %}
+Su dispositivo no es tactil
+{% endif %}
+
+<br><br>
+{% if request|is_bot %}
+Es usted un bot
+{% else %}
+Usted no es un bot
+{% endif %}
+
+<p>Nombre del host del cliente: {{ client_host  }}</p>
+<p>Ip del cliente: {{ client_ip  }}</p>
+
+</body>
+</html>
